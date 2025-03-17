@@ -43,7 +43,7 @@ const NoteForm: React.FC<NoteFormProps> = ({ selectedSubject, setNotes }) => {
       <h3 className="text-lg font-semibold">Add Note for {selectedSubject}</h3>
       <textarea
         className="w-full p-2 mt-2 bg-gray-900 text-white rounded-lg"
-        rows={4}
+        rows={10}
         placeholder="Write your note here..."
         value={noteContent}
         onChange={(e) => setNoteContent(e.target.value)}
