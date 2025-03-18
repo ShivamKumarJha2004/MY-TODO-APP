@@ -17,24 +17,24 @@ const NoteList: React.FC<NoteListProps> = ({ selectedSubject, notes }) => {
   const filteredNotes = notes.filter((note) => note.subject === selectedSubject);
 
   return (
-    <div className="max-w-2xl mx-auto p-6">
-      <h2 className="text-3xl font-bold mb-4 text-white text-center">
+    <div className="w-full mx-auto">
+      <h2 className="text-3xl font-bold mb-6 text-white text-center">
         Notes for <span className="text-blue-400">{selectedSubject}</span>
       </h2>
 
-      {/* ✅ Notes ko scrollable banane ke liye max height aur overflow-y-auto */}
-      <div className="max-h-96 overflow-y-auto space-y-4 p-2 bg-gray-900 rounded-lg">
+      {/* ✅ Improved note display with better width and height */}
+      <div className="space-y-6">
         {filteredNotes.length === 0 ? (
-          <p className="text-gray-400 text-center">
+          <p className="text-gray-400 text-center p-8 bg-gray-900 rounded-lg">
             No notes available for this subject. Add a new note!
           </p>
         ) : (
           filteredNotes.map((note) => (
             <div
               key={note.id}
-              className="p-4 bg-gray-800 text-white rounded-lg shadow-md border border-gray-700"
+              className="p-6 bg-gray-800 text-white rounded-lg shadow-md border border-gray-700 min-h-[200px] w-full"
             >
-              <p className="text-lg text-zinc-100 break-words">{note.content}</p>
+              <p className="text-lg text-zinc-100 whitespace-pre-wrap break-words">{note.content}</p>
             </div>
           ))
         )}
