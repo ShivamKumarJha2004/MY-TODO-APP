@@ -259,7 +259,11 @@ const Dashboard: React.FC = () => {
             ) : viewMode === "view" ? (
               <div>
                 <h3 className="text-lg font-medium mb-4">Subject Notes</h3>
-                <NoteList selectedSubject={selectedSubject} notes={notes} />
+                <NoteList 
+                  selectedSubject={selectedSubject} 
+                  notes={notes} 
+                  setNotes={setNotes} 
+                />
               </div>
             ) : (
               <div>
